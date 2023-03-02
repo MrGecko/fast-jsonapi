@@ -5,7 +5,6 @@ from pydantic import BaseModel
 from sqlalchemy import insert, select
 from sqlalchemy.orm import Session
 
-import crud
 import models
 from schemas import Note, NoteIn, Document, DocumentIn
 from database import metadata, engine, SessionLocal
@@ -80,7 +79,7 @@ class EntityFactory(ABC):
         
     @classmethod
     def register_get_routes(cls, router: APIRouter):
-        ##TODO: respose_model : c'est les schema pas les models
+        ##TODO: response_model : c'est les schema pas les models
         # fetch single
         #router.add_api_route(f"/{cls.name}/<item_id: int>", cls.fetch_one_or_none, methods=['GET'], response_model=cls.model)
         # fetch all
